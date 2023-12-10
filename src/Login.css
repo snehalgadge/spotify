@@ -1,0 +1,19 @@
+.login{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+}
+
+.login > img{
+    width: 90%;
+}
+.login > a{
+    padding: 15px;
+    border-radius: 99px;
+    background-color: #1db954;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
