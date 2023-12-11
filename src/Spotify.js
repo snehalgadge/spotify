@@ -15,7 +15,9 @@ const scopes = [
 ];
 
 export const getTokenUrl =() =>{
-    return window.location.hash.substring(1).split('&')
+    return window.location.hash
+    .substring(1)
+    .split('&')
 }
 export const loginUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
   "%20"
