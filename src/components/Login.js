@@ -1,7 +1,7 @@
 import React from 'react'
 import './Login.css'
-import logo from './assets/Spotify_Logo.png'
-import { loginUrl } from './spotify'
+import logo from '../assets/Spotify_Logo.png'
+import { loginUrl } from '../contextapi/spotify'
 
 const login = () => {
   return (

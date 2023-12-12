@@ -1,0 +1,24 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    flex: 0.2;
+    padding-left: 10px;
+    padding-right: 10px;
+    min-width: 230px;
+    height: 100vh;
+    color: white;
+    background: linear-gradient(109.6deg, rgb(0, 0, 0)11.2%,rgb(16, 37, 60)51.2%,rgb(36, 45, 57)98.6%);
+  }
+  
+  .sidebar_title {
+    margin-left: 12px;
+    padding: 8px;
+    font-size: 12px;
+  }
+  
+  .sidebar_logo {
+    margin-right: auto;
+    object-fit: contain;
+    height: 50px;
+    padding: 12px;
+  }
