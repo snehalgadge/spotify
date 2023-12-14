@@ -1,20 +1,17 @@
-import React from 'react'
-import './Login.css'
-import logo from '../assets/Spotify_Logo.png'
-import { loginUrl } from '../contextapi/spotify'
+import React from "react";
+import "./Login.css";
+import { accessUrl } from "../contextapi/spotify";
 
-const login = () => {
+function Login() {
   return (
-    <div className='login'> 
-    {/* spotify logo */}
-    <img 
-    src={ logo } 
-    alt='loGo'/
-    >
-    {/* login Button */}
-    <a href={ loginUrl }>LOGIN WITH SPOTIFY</a>
+    <div className="login">
+      <img
+        src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
+        alt=""
+      />
+      <a href={accessUrl}>LOGIN TO SPOTIFY</a>
     </div>
-  )
+  );
 }
 
-export default login
+export default Login;

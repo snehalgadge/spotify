@@ -5,7 +5,6 @@ const clientId = "c92891925e014fba913daa9d247585b2";
 
 // once authorized redirecting back to the local host(home page)
 const redirectUri = "http://localhost:3000/";
-
 const scopes = [
   "user-read-currently-playing",
   "user-read-recently-played",
@@ -14,17 +13,18 @@ const scopes = [
   "user-modify-playback-state",
 ];
 
-export const getTokenUrl =() =>{
-    return window.location.hash
+export const getTokenFromResponse = () => {
+  return window.location.hash
     .substring(1)
-    .split('&')
+    .split("&")
     .reduce((initial, item) => {
       var parts = item.split("=");
       initial[parts[0]] = decodeURIComponent(parts[1]);
 
       return initial;
-    }, []);    
-}
-export const loginUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
+    },[]);
+};
+
+export const accessUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
   "%20"
 )}&response_type=token&show_dialog=true`;
