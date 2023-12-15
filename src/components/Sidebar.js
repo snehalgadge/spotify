@@ -1,34 +1,71 @@
 import React from "react";
-import "./sidebar.css";
-import SidebarOption from "./SidebarOption";
-import HomeIcon from "@mui/icons-material/Home";
-import SearchIcon from "@mui/icons-material/Search";
-import LibraryMusicIcon from "@mui/icons-material/LibraryMusic";
-import { getTokenFromResponse } from "../contextapi/spotify";
-import { useStateValue } from "../contextapi/StateProvider";
-
-function Sidebar() {
-  const [{ playlists }, dispatch] = useStateValue();
-  console.log(playlists);
-
+import styled from "styled-components";
+import { MdHomeFilled, MdSearch } from "react-icons/md";
+import { IoLibrary } from "react-icons/io5";
+import Playlists from "./Playlists";
+export default function Sidebar() {
   return (
-    <div className="sidebar">
-      <img
-        className="sidebar__logo"
-        src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
-        alt=""
-      />
-      <SidebarOption Icon={HomeIcon} option="Home" />
-      <SidebarOption Icon={SearchIcon} option="Search" />
-      <SidebarOption Icon={LibraryMusicIcon} option="Your Library" />
-      <br />
-      <strong className="sidebar__title">PLAYLISTS</strong>
-      <hr />
-      {playlists?.items?.map((playlist) => (
-        <SidebarOption option={playlist.name} />
-      ))}
-    </div>
+    <Container>
+      <div className="top__links">
+        <div className="logo">
+          <img
+            src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png"
+            alt="spotify"
+          />
+        </div>
+        <ul>
+          <li>
+            <MdHomeFilled />
+            <span>Home</span>
+          </li>
+          <li>
+            <MdSearch />
+            <span>Search</span>
+          </li>
+          <li>
+            <IoLibrary />
+            <span>Your Library</span>
+          </li>
+        </ul>
+      </div>
+      <Playlists />
+    </Container>
   );
 }
 
-export default Sidebar;
+const Container = styled.div`
+  background-color: black;
+  color: #b3b3b3;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  .top__links {
+    display: flex;
+    flex-direction: column;
+    .logo {
+      text-align: center;
+      margin: 1rem 0;
+      img {
+        max-inline-size: 80%;
+        block-size: auto;
+      }
+    }
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+      li {
+        display: flex;
+        gap: 1rem;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+`;
